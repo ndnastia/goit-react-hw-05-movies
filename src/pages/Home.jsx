@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchTrendingNow } from "helpers/api";
+import {fetchTrendingNow} from "helpers/api";
 
 const Home = () => {
 
@@ -8,7 +8,7 @@ const Home = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchTrendingNow = async () => {
+        const fetchTrendingMovies= async () => {
             try {
               setIsLoading(true);
         
@@ -21,6 +21,9 @@ const Home = () => {
               setIsLoading(false);
             }
           }
+
+          fetchTrendingMovies();
+
     }, [])
 
     const showMovies = Array.isArray(movies) && movies.length;
@@ -33,6 +36,9 @@ const Home = () => {
             <p>{movie.title}</p>
         </li>)})}    
         </ul>
+
+        {isLoading && <div>Loading..</div>}
+        {error && <p>{error}</p>}
         </main>
        
         
