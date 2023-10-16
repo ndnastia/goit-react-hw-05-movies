@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {fetchTrendingNow} from "helpers/api";
 
+
 const Home = () => {
 
     const [movies, setMovies] = useState(null);
