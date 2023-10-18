@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const MoviesList = ({movies}) => {
+const MovieList = ({movies}) => {
     
     return(
         <main>
@@ -25,4 +25,4 @@ const MoviesList = ({movies}) => {
     )
 }
 
-export default MoviesList;
+export default MovieList;
