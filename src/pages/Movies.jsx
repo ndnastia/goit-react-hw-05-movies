@@ -10,12 +10,12 @@ const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
+        const currentQuery = searchParams.get('query');
+        if (!currentQuery) return;
         
-        if (!query) return;
-        const query = searchParams.get('query');
         const fetchMovieByQuery = async () => {
           try {
-            const movieByQuery = await getMovieByQuery(query);
+            const movieByQuery = await getMovieByQuery(currentQuery);
             setMovies(movieByQuery);
           } catch (e) {
             console.log(e);
