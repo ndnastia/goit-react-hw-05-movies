@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {fetchTrendingNow} from "helpers/api";
+import MovieList from "components/MovieList";
 
 
 const Home = () => {
@@ -7,6 +8,8 @@ const Home = () => {
     const [movies, setMovies] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+
+   
 
     useEffect(() => {
         const fetchTrendingMovies= async () => {
@@ -30,12 +33,8 @@ const Home = () => {
     const showMovies = Array.isArray(movies) && movies.length;
     return(
         <main>
-             <ul>
-        {showMovies && movies.map((movie) => {return(
-        <li key={movie.id}> 
-            <img href={movie.poster_path} alt={movie.title}/>
-            <p>{movie.title}</p>
-        </li>)})}    
+             <ul >
+        {showMovies && <MovieList movies={movies} />}    
         </ul>
 
         {isLoading && <div>Loading..</div>}
@@ -44,6 +43,7 @@ const Home = () => {
        
         
     )
+    
 }
 
 export default Home;
