@@ -1,0 +1,15 @@
+.details-container {
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.details-card {
+    display: flex;
+    gap: 15px;
+}
+
+.details {
+    display: flex;
+    gap: 20px;
+    
+}

@@ -1,0 +1,18 @@
+.home-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Fira Sans';
+    font-weight: 500;
+    background-color: #72aee6;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 300px;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+
+    margin: auto;
+    
+}

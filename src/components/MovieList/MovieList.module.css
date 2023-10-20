@@ -1,0 +1,17 @@
+
+.card-list {
+  padding-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-item {
+    text-decoration: none;
+    width:150px;
+}
+
+.card-title {
+    text-decoration: none;
+}

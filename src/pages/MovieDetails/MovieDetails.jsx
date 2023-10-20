@@ -1,6 +1,8 @@
+import React from "react";
 import { useEffect, useState, Suspense, useRef } from "react";
 import {getMovieById} from "helpers/api";
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
+import style from 'pages/MovieDetails/MovieDetails.module.css';
 
 
 const MovieDetails = () => {
@@ -40,7 +42,8 @@ const MovieDetails = () => {
     <main>
        <Link to={backLinkHref.current}>Go Back</Link>
       { details !== null &&
-         <div>
+         <div className={style['details-container']}>
+          <div className={style['details-card']}> 
             <div>
             <img src={'https://image.tmdb.org/t/p/w500/' + details.poster_path} alt={details.title}/>
             </div>
@@ -54,7 +57,7 @@ const MovieDetails = () => {
                 <p>{details.overview}</p>
                 </div>
 
-                <div>
+          <div>
                   <h2>Genres</h2>
                   <p>{details.genres?.map(genre => (
               <li key={genre.id}>{genre.name}</li>
@@ -62,10 +65,13 @@ const MovieDetails = () => {
                 </div>
                 
             </div>
+          </div>
+            
+                
         </div>}
 
         <ul>
-          <nav>
+          <nav className={style['details']}>
             <Link to='cast'>
             Cast
             </Link>

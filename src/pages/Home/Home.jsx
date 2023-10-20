@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import {fetchTrendingNow} from "helpers/api";
-import MovieList from "components/MovieList";
+import MovieList from "components/MovieList/MovieList";
+
+import style from 'pages/Home/Home.module.css'
 
 
 const Home = () => {
@@ -33,9 +35,13 @@ const Home = () => {
     const showMovies = Array.isArray(movies) && movies.length;
     return(
         <main>
-             <ul >
+          <div className={style['home-title']}>
+            <h1>TRENDING TODAY</h1>
+          </div>
+          
+             
         {showMovies && <MovieList movies={movies} />}    
-        </ul>
+        
 
         {isLoading && <div>Loading..</div>}
         {error && <p>{error}</p>}
